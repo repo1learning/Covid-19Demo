@@ -1,11 +1,11 @@
 package com.AutomatiopnProject.TestRunner;
 
 import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(strict = true, plugin = {"html:target/cucumber"}, features = { "src/test/resources/" }, glue = {
+@CucumberOptions(strict = true, plugin = {"html:target/cucumber"}, features = { "src/test/resources/featureFiles/dailyExecutions/dailyDeathCasesInCountries.feature" }, glue = {
 		"com.AutomationProject.StepDefs" })
 
 public class RunnerClass {

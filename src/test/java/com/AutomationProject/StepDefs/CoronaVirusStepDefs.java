@@ -1,14 +1,20 @@
 package com.AutomationProject.StepDefs;
 
+import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Assert;
+
 import com.AutomatioProject.Utilities.ScenarioContext;
 import com.AutomatioProject.Utilities.apiUtils;
-import io.cucumber.java.en.Given;
+
+import cucumber.api.java.en.Given;
+
 
 public class CoronaVirusStepDefs {
-
+	
+	final static Logger logger = Logger.getLogger(CoronaVirusStepDefs.class);
+	
 	private ScenarioContext scenarioContext;
 	private apiUtils apiUtils;
 
@@ -26,7 +32,7 @@ public class CoronaVirusStepDefs {
 	@Given("^I get total number of cases in the world$")
 	public void i_get_total_number_of_cases_in_the_worl() throws Throwable {
 		JSONObject totalCasesResponse = new JSONObject(apiUtils.getresponse(scenarioContext.configFile.getTotalCasesUrl()).asString());
-		System.out.println(totalCasesResponse.toString());
+		logger.info(totalCasesResponse.toString());
 		Assert.assertNotNull(totalCasesResponse);
 	}
 
@@ -38,7 +44,8 @@ public class CoronaVirusStepDefs {
 			
 			if((totalCasesResponse.getJSONObject(i).get("country").equals(country))){
 				countriesInfo = totalCasesResponse.getJSONObject(i);
-				System.out.println("Todays death in "+country+" : " + countriesInfo.get("deaths"));
+				logger.info("Todays death in "+country+" : " + countriesInfo.get("deaths"));
+				logger.info("Thread being used : "+Thread.currentThread().getId());
 				Assert.assertNotNull(countriesInfo);
 
 			}
