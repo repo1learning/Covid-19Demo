@@ -5,7 +5,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(strict = true, plugin = {"html:target/cucumber"}, features = { "src/test/resources/featureFiles/dailyExecutions/dailyDeathCasesInCountries.feature" }, glue = {
+@CucumberOptions(strict = true, plugin = {"html:target/cucumber"}, features = { "src/test/resources/" }, glue = {
 		"com.AutomationProject.StepDefs" })
 
 public class RunnerClass {

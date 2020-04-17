@@ -4,12 +4,9 @@ import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Assert;
-
 import com.AutomatioProject.Utilities.ScenarioContext;
 import com.AutomatioProject.Utilities.apiUtils;
-
 import cucumber.api.java.en.Given;
-
 
 public class CoronaVirusStepDefs {
 	
@@ -26,6 +23,7 @@ public class CoronaVirusStepDefs {
 	@Given("^I have details about pandemic from all over the world$")
 	public void i_have_details_about_pandemic_from_all_over_the_world() throws Throwable {
 		int status = apiUtils.getresponse(scenarioContext.configFile.getCovid19Url()).getStatusCode();
+		logger.info("Api status is : "+status + " All the test cases should be kicked off now");
 		Assert.assertEquals("Status is not same .. Seems to an issue with API", 200, status);
 	}
 

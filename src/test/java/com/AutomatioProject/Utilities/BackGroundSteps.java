@@ -1,11 +1,10 @@
 package com.AutomatioProject.Utilities;
 import org.apache.log4j.Logger;
-
 import com.AutomationProject.StepDefs.CoronaVirusStepDefs;
-
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+
 public class BackGroundSteps {
 
 	final static Logger logger = Logger.getLogger(CoronaVirusStepDefs.class);
