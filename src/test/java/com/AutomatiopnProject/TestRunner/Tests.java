@@ -8,6 +8,6 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(strict = true, plugin = {"html:target/cucumber"}, features = { "src/test/resources/" }, glue = {
 		"com.AutomationProject.StepDefs" })
 
-public class RunnerClass {
+public class Tests {
 
 }
